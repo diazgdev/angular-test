@@ -1,0 +1,18 @@
+<form [formGroup]="postForm" (ngSubmit)="onSubmit(postForm.value)">
+  <label>
+    Title:
+    <input type="text" formControlName="title" />
+  </label>
+
+  <label>
+    Body:
+    <textarea formControlName="body"></textarea>
+  </label>
+
+  <label>
+    Featured Image:
+    <input type="file" (change)="onFileSelected($event)" accept=".jpg, .png" />
+  </label>
+
+  <button type="submit">Submit</button>
+</form>

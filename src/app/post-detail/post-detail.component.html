@@ -1,0 +1,15 @@
+<div *ngIf="post">
+  <h1>{{ post.title }}</h1>
+  <small>Created at: {{ post.created_at | date : "MMM d, y" }}</small>
+  <p>{{ post.body }}</p>
+</div>
+
+<div *ngIf="post?.featured_image_url">
+  <h2>{{ post?.title }}</h2>
+  <img [src]="apiUrl + post?.featured_image_url" alt="Featured Image" />
+  <p>{{ post?.body }}</p>
+</div>
+
+<div>
+  <a routerLink="/posts">Regresar</a>
+</div>
